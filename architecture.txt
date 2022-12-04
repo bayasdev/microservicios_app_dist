@@ -1,0 +1,3 @@
+personas -> 8000
+productos -> 8001
+facturas -> 8002
