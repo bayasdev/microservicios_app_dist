@@ -9,8 +9,6 @@ app = FastAPI(
     title='WS Productos',
     description='Microservicio de Productos',
     version='1.0',
-    # docs_url=None,
-    # redoc_url=None
 )
 
 # Middlewares

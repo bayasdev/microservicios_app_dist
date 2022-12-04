@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Response
 from starlette.status import HTTP_204_NO_CONTENT
+from typing import List
 from config.db import conn
 from models.tipo_producto import tipo_productos
 from schemas.tipo_producto import TipoProducto, TipoProductoCreate
@@ -7,7 +8,7 @@ from schemas.tipo_producto import TipoProducto, TipoProductoCreate
 tipo_producto = APIRouter()
 
 
-@tipo_producto.get('/tipo_productos', tags=['tipo_productos'])
+@tipo_producto.get('/tipo_productos', response_model=List[TipoProducto], tags=['tipo_productos'])
 def get_tipo_productos():
     return conn.execute(tipo_productos.select()).fetchall()
 

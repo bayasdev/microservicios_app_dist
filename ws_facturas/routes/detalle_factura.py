@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Response
 from starlette.status import HTTP_204_NO_CONTENT
+from typing import List
 from config.db import conn
 from models.detalle_factura import detalle_facturas
 from schemas.detalle_factura import DetalleFactura, DetalleFacturaCreate
@@ -7,7 +8,7 @@ from schemas.detalle_factura import DetalleFactura, DetalleFacturaCreate
 detalle_factura = APIRouter()
 
 
-@detalle_factura.get('/detalle_facturas', tags=['detalle_facturas'])
+@detalle_factura.get('/detalle_facturas', response_model=List[DetalleFactura], tags=['detalle_facturas'])
 def get_detalle_facturas():
     return conn.execute(detalle_facturas.select()).fetchall()
 

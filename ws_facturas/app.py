@@ -9,8 +9,6 @@ app = FastAPI(
     title='WS Facturas',
     description='Microservicio de Facturas',
     version='1.0',
-    # docs_url=None,
-    # redoc_url=None
 )
 
 # Middlewares
