@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from config.config import settings
+from config.environment import settings
 from routes.tipo_producto import tipo_producto
 from routes.producto import producto
 
